@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <div class="topBar">
+            <h1>Welcome {{session['name']}}</h1>
+            <a href="/recipes/new">Create</a>
+            <a href="/logout">Logout</a>
+        </div>
+        <p>These are the recipes</p>
+        <table class="table table-responsive table-hover">
+            <tr class="table-dark">
+                <th>Name</th>
+                <th>Under 30 Minutes</th>
+                <th>Actions</th>
+            </tr>
+            {% for recipe in recipes %}
+                <tr>
+                    <td>{{ recipe['name'] }}</td>
+                    <td>{{ recipe['under30'] }}</td>
+                    <td><a href="/recipes/{{ recipe['id'] }}">View Instructions</a>
+                        {% if recipe['user_id'] == session['user_id']%}
+                        <a href="/recipes/edit/{{ recipe['id'] }}">Edit</a>
+                        <a href="/recipes/delete/{{ recipe['id'] }}">Delete</a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+</body>
+</html>

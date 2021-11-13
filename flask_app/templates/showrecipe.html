@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <title>Show Recipe</title>
+</head>
+<body>
+    <div class="container">
+        <div class="topBar">
+            <h1>Welcome {{session['name']}}</h1>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/logout">Logout</a>
+        </div>
+        <h2>{{ recipe['name'] }}</h2>
+        <table class="table table-responsive table-hover">
+            <tr>
+                <td>Description</td>
+                <td>{{ recipe['description'] }}</td>
+            </tr>
+            <tr>
+                <td>Under 30 minutes:</td>
+                <td>{{ recipe['under30'] }}</td>
+            </tr>
+            <tr>
+                <td>Instructions</td>
+                <td>{{ recipe['instructions'] }}</td>
+            </tr>
+            <tr>
+                <td>Date Made</td>
+                <td>{{ recipe['madeon'] }}</td>
+            </tr>
+        </table>
+    </div>
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+</body>
+</html>

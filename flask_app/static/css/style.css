@@ -1,0 +1,88 @@
+* { /*CSS Reset*/
+	vertical-align: baseline;
+	font-weight: inherit;
+	font-family: inherit;
+	font-style: inherit;
+	font-size: 105%;
+	border: 0 none;
+	outline: 0;
+	padding: 0;
+	margin: 0;
+	}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+	color: black;
+}
+
+.topBar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+}
+
+.topBar * {
+    padding: 10px;
+}
+
+.topBar h1{
+    flex-grow: 3;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 0px auto;
+    width: 60%;
+    }
+
+.doorBox {
+    display: flex;
+    padding: 10px;
+    margin: 0px auto;
+    width: 60%;
+    }
+
+.message {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 0px auto;
+    width: 80%;
+    background-color: pink;
+    color: red;
+    }
+
+.userContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 0px auto;
+    width: 60%;
+    }
+
+.formBox {
+    display: flex;
+    flex-direction: column;
+    background-color: lightslategray;
+    color: white;
+    width: 80%;
+    padding: 5px;
+    margin: 10px auto;
+}
+
+.addForm {
+    display: flex;
+    align-content: stretch;
+    background-color: lightslategray;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+}
